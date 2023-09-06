@@ -1,0 +1,33 @@
+.button {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 200px;
+    justify-content: space-between;
+
+
+    .like {
+        border: solid green 2px;
+        display: flex;
+        width: 30%;
+        text-align: center;
+
+        span {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .hate {
+        border: solid red 2px;
+        display: flex;
+        width: 30%;
+        text-align: center;
+
+        span {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+}

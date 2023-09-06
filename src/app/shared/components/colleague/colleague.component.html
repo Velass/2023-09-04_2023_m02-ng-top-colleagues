@@ -1,0 +1,17 @@
+<div class="colleague-card" *ngIf ="colleague">
+    <img [src]="colleague.photo" alt="photo">
+    <h3>{{ colleague.pseudo }}</h3>
+    <p>Score: {{ colleague.score }}</p>
+    <tc-like-hate></tc-like-hate>
+</div>
+
+<div class="colleague-card" *ngIf="!colleague">
+    <!-- Notez que dans ce cas, vous ne devriez pas essayer d'accéder à colleague.photo, car colleague est nul. -->
+    <img src="chemin_vers_une_image_par_defaut.jpg" alt="Photo par défaut">
+    <h3>Collègue inconnu</h3>
+    <p>Score: 0</p>
+    <tc-like-hate></tc-like-hate>
+</div>
+
+
+  
