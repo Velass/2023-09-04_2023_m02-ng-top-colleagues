@@ -8,6 +8,15 @@ import { Colleague } from 'src/app/models/colleague';
 })
 export class ColleagueComponent {
   @Input() colleague: Colleague | undefined ;
-
+  
+  constructor(){
+    this.colleague = {
+      pseudo: 'Collègue Fictif',
+      score: 800,
+      photo: 'https://exemple.com/photo.jpg',
+    };
+  
+  }
 }
+
 

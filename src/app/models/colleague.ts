@@ -3,3 +3,4 @@ export interface Colleague {
     photo: string;
     score: number;
 }
+
