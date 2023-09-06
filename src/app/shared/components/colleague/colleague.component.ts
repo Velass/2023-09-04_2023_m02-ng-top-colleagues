@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
 import { LikeHate } from 'src/app/models/like-hate';
-import { LikeHateComponent } from '../like-hate/like-hate.component';
 
 @Component({
   selector: 'tc-colleague',
@@ -10,6 +9,13 @@ import { LikeHateComponent } from '../like-hate/like-hate.component';
 })
 export class ColleagueComponent {
   @Input() colleague: Colleague | undefined;
+
+  colleagues: Colleague[] = [
+    new Colleague('John', 'john.jpg', 100),
+    new Colleague('Alice','alice.jpg',500),
+    new Colleague('Bob','bob.jpg', 700),
+    // Ajoutez d'autres collègues ici
+  ];
 
   disableLikeButton = false;
   disableHateButton = false;
