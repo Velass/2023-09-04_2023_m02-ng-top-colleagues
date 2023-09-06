@@ -1,8 +1,8 @@
-<div class="button">
-<button class ="like">
+<div class="button" >
+<button class ="like" (click)="Like()" [disabled]="disableLikeButton" >
     <span>like</span>
 </button>
-<button class ="hate">
+<button class ="hate" (click)="Hate()" [disabled]="disableHateButton">
     <span>hate</span>
 </button>
 </div>

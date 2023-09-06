@@ -2,7 +2,7 @@
     <img [src]="colleague.photo" alt="photo">
     <h3>{{ colleague.pseudo }}</h3>
     <p>Score: {{ colleague.score }}</p>
-    <tc-like-hate></tc-like-hate>
+    <tc-like-hate (avisEmitted)="handleAvis($event)" [disableLikeButton] = "disableLikeButton" [disableHateButton] = "disableHateButton"></tc-like-hate>
 </div>
 
 <div class="colleague-card" *ngIf="!colleague">
