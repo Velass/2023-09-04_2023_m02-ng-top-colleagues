@@ -1,0 +1,16 @@
+<div class="votingHistory">
+    <div class="histoH">
+        <h2>Historique</h2>
+    </div>
+
+    <div class="blockHisto">
+        <div class="oneHisto" *ngFor="let vote of votes">
+            <img [src]="vote.colleague.photo" alt="photo">
+            <div class="note">
+                <p>Collègue: {{ vote.colleague.pseudo }}</p>
+                <p>{{ vote.colleague.pseudo }} a un score de : {{ vote.colleague.score }}</p>
+                <button class="supp" (click)="deleteVote(vote)">supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>

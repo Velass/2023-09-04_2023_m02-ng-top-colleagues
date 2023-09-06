@@ -6,9 +6,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { ColleagueListComponent } from './shared/components/colleague-list/colleague-list.component';
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

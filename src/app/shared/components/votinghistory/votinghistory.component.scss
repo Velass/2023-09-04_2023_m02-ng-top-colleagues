@@ -1,0 +1,18 @@
+.blockHisto {
+    display: flex;
+    flex-direction: column;
+    .oneHisto{
+        width: 20%;
+        border: solid 2px blue;
+        margin-left: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        img {
+            border: solid 2px black;
+            width: 100px;
+            height: 100px;
+
+        }
+    }
+}
