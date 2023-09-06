@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Colleague } from 'src/app/models/colleague';
+import { ColleagueService } from 'src/app/providers/colleague.service';
 
 @Component({
   selector: 'tc-colleague-list',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./colleague-list.component.scss']
 })
 export class ColleagueListComponent {
+  colleagues: Colleague[] | undefined;
+
+  constructor(private colleagueService: ColleagueService) { }
+
+  ngOnInit(): void {
+    this.colleagues = this.colleagueService.list();
+  }
 
 }

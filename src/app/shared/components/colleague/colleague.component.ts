@@ -8,25 +8,13 @@ import { LikeHate } from 'src/app/models/like-hate';
   styleUrls: ['./colleague.component.scss']
 })
 export class ColleagueComponent {
-  @Input() colleague: Colleague | undefined;
-
-  colleagues: Colleague[] = [
-    new Colleague('John', 'john.jpg', 100),
-    new Colleague('Alice','alice.jpg',500),
-    new Colleague('Bob','bob.jpg', 700),
-    // Ajoutez d'autres collègues ici
-  ];
+  @Input()
+  colleague!: Colleague;
 
   disableLikeButton = false;
   disableHateButton = false;
 
   constructor() {
-
-    this.colleague = {
-      pseudo: 'Collègue Fictif',
-      score: -999,
-      photo: 'https://exemple.com/photo.jpg',
-    };
 
   }
   handleAvis(avis: LikeHate) {
