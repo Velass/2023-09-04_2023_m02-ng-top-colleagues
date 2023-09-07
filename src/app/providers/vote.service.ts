@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Vote } from '../models/vote'; // Assurez-vous d'importer l'interface Vote
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ColleagueService } from './colleague.service';
+import { Colleague } from '../models/colleague';
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +19,20 @@ export class VoteService {
   private votes: Vote[] = [];
   private votesSubject = new Subject< Vote >();
   
-  constructor(private http: HttpClient) {
-    this.votes = [
-      { colleague: { pseudo: 'Collègue 1', photo: '', score: 100 }, vote: 1 },
-      { colleague: { pseudo: 'Collègue 2', photo: '', score: 200 }, vote: 1 },
-      { colleague: { pseudo: 'Collègue 3', photo: '', score: 400 }, vote: 1 },
-      // Ajoutez d'autres votes fictifs ici
-    ];
+  constructor(private http: HttpClient,private colleagueService : ColleagueService ) {
+    this.colleagueService.getColleagues().subscribe( (colleagues: Colleague[])=>{
+      colleagues.forEach(element => {
+        console.log(element)
+        this.votes.push({ colleague : element, vote : 1})
+        
+      });
+    });
+    // this.votes = [
+    //   { colleague: { pseudo: 'Collègue 1', photo: '', score: 100 }, vote: 1 },
+    //   { colleague: { pseudo: 'Collègue 2', photo: '', score: 200 }, vote: 1 },
+    //   { colleague: { pseudo: 'Collègue 3', photo: '', score: 400 }, vote: 1 },
+    //   // Ajoutez d'autres votes fictifs ici
+    // ];
   }
 
   

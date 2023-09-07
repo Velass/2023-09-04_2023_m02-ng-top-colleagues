@@ -23,20 +23,22 @@ export class ColleagueComponent {
   
   handleAvis(avis: LikeHate) {
     if (this.colleague) {
-      if (avis === LikeHate.LIKE) {
-        this.voteService.actionNext({colleague : this.colleague, vote: LikeHate.LIKE})
-        this.colleagueService.vote(this.colleague.pseudo, "LIKE").subscribe(res => {
-          this.colleague.score = res.score
-        });
-        this.colleague.score++;
-      } if (avis === LikeHate.HATE) {
-        this.voteService.actionNext({colleague : this.colleague, vote: LikeHate.HATE})
-        this.colleagueService.vote(this.colleague.pseudo, "HATE").subscribe(res => {
-          console.log(res)
-          this.colleague.score = res.score
-        });
-        this.colleague.score--;
+      let vote = {colleague : this.colleague, vote: LikeHate.LIKE};
+      let action ="";
+
+      if (avis === LikeHate.LIKE){
+        vote.vote = LikeHate.LIKE;
+        action="LIKE"
+      }else if(avis === LikeHate.HATE){
+        vote.vote = LikeHate.HATE;
+        action="HATE"
       }
+      
+      this.voteService.actionNext(vote)
+      this.colleagueService.vote(this.colleague.pseudo, action).subscribe(res => {
+        this.colleague.score = res.score
+      });
+
       if (this.colleague.score >= 1000) {
         this.disableLikeButton = true;
       }
