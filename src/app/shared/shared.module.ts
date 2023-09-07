@@ -14,7 +14,8 @@ import { VotingHistoryComponent } from './components/votinghistory/votinghistory
     ColleagueComponent,
     ColleagueListComponent,
     ScorePipe,
-    VotingHistoryComponent
+    VotingHistoryComponent,
+    
   ],
   imports: [
     CommonModule
@@ -24,7 +25,7 @@ import { VotingHistoryComponent } from './components/votinghistory/votinghistory
     ColleagueComponent,
     ColleagueListComponent,
     ScorePipe,
-    VotingHistoryComponent
+    VotingHistoryComponent,
   ],
   
 })

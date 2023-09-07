@@ -4,17 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
-import { ColleagueListComponent } from './shared/components/colleague-list/colleague-list.component';
-
+import { WelcomeModule } from './pages/welcome/welcome.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
     NgbModule,
     SharedModule,
+    WelcomeModule
+    
   ],
 
   providers: [],
