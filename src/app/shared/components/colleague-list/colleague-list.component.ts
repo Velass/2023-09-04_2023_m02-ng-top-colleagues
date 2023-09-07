@@ -13,7 +13,10 @@ export class ColleagueListComponent {
   constructor(private colleagueService: ColleagueService) { }
 
   ngOnInit(): void {
-    this.colleagues = this.colleagueService.list();
+    this.colleagueService.getColleagues().subscribe(data => {
+      console.log(data)
+      this.colleagues = data; // Stockez les données dans le tableau colleagues
+    });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Vote } from '../models/vote'; // Assurez-vous d'importer l'interface Vote
 import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class VoteService {
   private votes: Vote[] = [];
   private votesSubject = new Subject< Vote >();
   
-  constructor() {
+  constructor(private http: HttpClient) {
     this.votes = [
       { colleague: { pseudo: 'Collègue 1', photo: '', score: 100 }, vote: 1 },
       { colleague: { pseudo: 'Collègue 2', photo: '', score: 200 }, vote: 1 },
@@ -24,6 +25,8 @@ export class VoteService {
       // Ajoutez d'autres votes fictifs ici
     ];
   }
+
+  
 
   getVotes(): Vote[] {
     return this.votes;
