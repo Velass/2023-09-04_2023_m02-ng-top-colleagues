@@ -9,13 +9,15 @@ import { WelcomeModule } from './pages/welcome/welcome.module';
 @NgModule({
   declarations: [
     AppComponent,
+    
 
   ],
   imports: [
     BrowserModule,
     NgbModule,
     SharedModule,
-    WelcomeModule
+    WelcomeModule,
+    
     
   ],
 
