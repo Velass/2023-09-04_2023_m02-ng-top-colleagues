@@ -1,45 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Vote } from '../models/vote'; // Assurez-vous d'importer l'interface Vote
-import { Subject } from 'rxjs';
+import { Vote } from '../models/vote'; 
+import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { ColleagueService } from './colleague.service';
-import { Colleague } from '../models/colleague';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VoteService {
-  deleteVote(vote: Vote): void {
-    const index = this.votes.indexOf(vote);
-    if (index !== -1) {
-      this.votes.splice(index, 1);
 
-    }
-  }
   private votes: Vote[] = [];
   private votesSubject = new Subject< Vote >();
+   apiUrl : string = "https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/votes";
   
-  constructor(private http: HttpClient,private colleagueService : ColleagueService ) {
-    this.colleagueService.getColleagues().subscribe( (colleagues: Colleague[])=>{
-      colleagues.forEach(element => {
-        console.log(element)
-        this.votes.push({ colleague : element, vote : 1})
-        
-      });
-    });
-    // this.votes = [
-    //   { colleague: { pseudo: 'Collègue 1', photo: '', score: 100 }, vote: 1 },
-    //   { colleague: { pseudo: 'Collègue 2', photo: '', score: 200 }, vote: 1 },
-    //   { colleague: { pseudo: 'Collègue 3', photo: '', score: 400 }, vote: 1 },
-    //   // Ajoutez d'autres votes fictifs ici
-    // ];
+  constructor(private http: HttpClient) {
+    this.getVotes().subscribe((votes) => {
+      this.votes = votes
+    })
+   
   }
 
-  
-
-  getVotes(): Vote[] {
-    return this.votes;
+  getVotes(): Observable<Vote[]> {
+    return this.http.get<Vote[]>(this.apiUrl);
   }
+  
 
   get actionObs() {
     return this.votesSubject.asObservable();
@@ -49,6 +32,5 @@ export class VoteService {
     this.votesSubject.next(vote)
   }
 
-  
 
 }

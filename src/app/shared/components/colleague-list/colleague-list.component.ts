@@ -14,8 +14,7 @@ export class ColleagueListComponent {
 
   ngOnInit(): void {
     this.colleagueService.getColleagues().subscribe(data => {
-      console.log(data)
-      this.colleagues = data; // Stockez les données dans le tableau colleagues
+      this.colleagues = data; 
     });
   }
 

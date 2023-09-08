@@ -1,8 +1,8 @@
 import { Colleague } from "./colleague";
-import { LikeHate } from "./like-hate";
+import { Like_Hate } from "./like-hate";
 
 export interface Vote {
     colleague: Colleague; 
-    vote: LikeHate; 
+    like_hate: Like_Hate; 
 
 }

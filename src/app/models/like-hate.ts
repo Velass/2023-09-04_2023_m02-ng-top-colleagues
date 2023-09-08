@@ -1,5 +1,5 @@
-export enum LikeHate {
-    LIKE = 0,
-    HATE = 1
+export enum Like_Hate {
+    LIKE = "LIKE",
+    HATE = "HATE"
  
 }

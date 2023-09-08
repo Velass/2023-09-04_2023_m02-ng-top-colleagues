@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { LikeHate } from 'src/app/models/like-hate';
+import { Like_Hate } from 'src/app/models/like-hate';
 
 @Component({
   selector: 'tc-like-hate',
@@ -7,17 +7,17 @@ import { LikeHate } from 'src/app/models/like-hate';
   styleUrls: ['./like-hate.component.scss']
 })
 export class LikeHateComponent {
-  @Output() avisEmitted: EventEmitter<LikeHate> = new EventEmitter<LikeHate>();
+  @Output() avisEmitted: EventEmitter<Like_Hate> = new EventEmitter<Like_Hate>();
   @Input() disableLikeButton: boolean = true;
   @Input() disableHateButton: boolean = true;
 
   
 
   Like() {
-    this.avisEmitted.emit(LikeHate.LIKE);
+    this.avisEmitted.emit(Like_Hate.LIKE);
   }
 
   Hate() {
-    this.avisEmitted.emit(LikeHate.HATE);
+    this.avisEmitted.emit(Like_Hate.HATE);
   }
 }

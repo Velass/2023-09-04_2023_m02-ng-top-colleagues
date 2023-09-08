@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output  } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
-import { LikeHate } from 'src/app/models/like-hate';
+import { Like_Hate } from 'src/app/models/like-hate';
+import { Vote } from 'src/app/models/vote';
 import { ColleagueService } from 'src/app/providers/colleague.service';
 import { VoteService } from 'src/app/providers/vote.service';
 
@@ -12,6 +13,7 @@ import { VoteService } from 'src/app/providers/vote.service';
 export class ColleagueComponent {
   @Input()
   colleague!: Colleague;
+  @Output() avisEmitted: EventEmitter<any> = new EventEmitter<Vote>();
 
   disableLikeButton = false;
   disableHateButton = false;
@@ -21,20 +23,23 @@ export class ColleagueComponent {
 
   }
   
-  handleAvis(avis: LikeHate) {
+  handleAvis(avis: Like_Hate) {
     if (this.colleague) {
-      let vote = {colleague : this.colleague, vote: LikeHate.LIKE};
+      let vote = {colleague : this.colleague, like_hate: avis};
       let action ="";
 
-      if (avis === LikeHate.LIKE){
-        vote.vote = LikeHate.LIKE;
+      if (avis === Like_Hate.LIKE){
+        vote.like_hate = Like_Hate.LIKE;
         action="LIKE"
-      }else if(avis === LikeHate.HATE){
-        vote.vote = LikeHate.HATE;
+      }else if(avis === Like_Hate.HATE){
+        vote.like_hate = Like_Hate.HATE;
         action="HATE"
       }
+      this.avisEmitted.emit({ colleague: this.colleague, action: action, vote: vote });
+      
       
       this.voteService.actionNext(vote)
+      
       this.colleagueService.vote(this.colleague.pseudo, action).subscribe(res => {
         this.colleague.score = res.score
       });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vote } from 'src/app/models/vote';
+import { ColleagueService } from 'src/app/providers/colleague.service';
 import { VoteService } from 'src/app/providers/vote.service';
 
 @Component({
@@ -8,18 +9,25 @@ import { VoteService } from 'src/app/providers/vote.service';
   styleUrls: ['./votinghistory.component.scss']
 })
 export class VotingHistoryComponent implements OnInit {
-  votes: Vote[] = []; // Variable pour stocker les votes
-
+  votes: Vote[] = []; 
   constructor(private voteService: VoteService) { }
 
   ngOnInit(): void {
-    this.votes = this.voteService.getVotes(); 
-  }
-   deleteVote(vote: Vote): void {
-    // Appelez la méthode du service pour supprimer le vote
-    this.voteService.deleteVote(vote);
+    this.voteService.getVotes().subscribe((votes) => {
+      this.votes = votes;
+    });
 
-    // Mettez à jour la liste des votes affichés
-    this.votes = this.voteService.getVotes();
+    this.voteService.actionObs.subscribe((vote: Vote) => {
+      this.votes.unshift(vote)
+    })
+  }
+
+
+  deleteVote(vote: Vote): void {
+    const index = this.votes.findIndex((v) => v.colleague.pseudo === vote.colleague.pseudo);
+    if (index !== -1) {
+      this.votes.splice(index, 1);
+
+    }
   }
 }
