@@ -23,7 +23,6 @@ ngOnInit(): void {
 }
 
 ajouter() {
-  console.log('Formulaire soumis avec succès:', this.colleague);
     this.colleagueService.createColleague(this.colleague).subscribe(res => {
       console.log(res)
     });

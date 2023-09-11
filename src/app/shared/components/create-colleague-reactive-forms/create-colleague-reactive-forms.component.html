@@ -1,0 +1,50 @@
+<form [formGroup]="createColleagueForm" (ngSubmit)="ajouter()" tcFirstLastValidator>
+  <div class="form-group">
+    <label for="pseudo">Pseudo: </label>
+    <input type="text" id="pseudo" formControlName="pseudo" tcPseudoValidator>
+    <div *ngIf="createColleagueForm.get('pseudo').hasError('pseudoExists') && createColleagueForm.get('pseudo').touched">
+      <div class="alert alert-danger">{{ createColleagueForm.get('pseudo').getError('pseudoExists') }}</div>
+    </div>
+    <div *ngIf="createColleagueForm.get('pseudo').hasError('required') && createColleagueForm.get('pseudo').touched">
+      <div class="alert alert-danger">Le pseudo est requis.</div>
+    </div>
+    <div *ngIf="createColleagueForm.get('pseudo').hasError('minlength') && createColleagueForm.get('pseudo').touched">
+      <div class="alert alert-danger">Le pseudo doit avoir au moins 2 caractères.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="nom">Nom: </label>
+    <input type="text" id="nom" formControlName="last">
+    <div *ngIf="createColleagueForm.get('last').hasError('required') && createColleagueForm.get('last').touched">
+      <div class="alert alert-danger">Le nom est requis.</div>
+    </div>
+    <div *ngIf="createColleagueForm.get('last').hasError('minlength') && createColleagueForm.get('last').touched">
+      <div class="alert alert-danger">Le nom doit avoir au moins 2 caractères.</div>
+    </div>
+    <div *ngIf="createColleagueForm.hasError('firstLast')&& createColleagueForm.get('last').touched">
+      <div class="alert alert-danger">Le nom ne peut pas être identique au prénom.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="prenom">Prénom: </label>
+    <input type="text" id="prenom" formControlName="first">
+    <div *ngIf="createColleagueForm.get('first').hasError('required') && createColleagueForm.get('first').touched">
+      <div class="alert alert-danger">Le prénom est requis.</div>
+    </div>
+    <div *ngIf="createColleagueForm.get('first').hasError('minlength') && createColleagueForm.get('first').touched">
+      <div class="alert alert-danger">Le prénom doit avoir au moins 2 caractères.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="photoUrl">Photo URL: </label>
+    <input type="text" id="photoUrl" formControlName="photo">
+    <div *ngIf="createColleagueForm.get('photo').hasError('required') && createColleagueForm.get('photo').touched">
+      <div class="alert alert-danger">L'URL de la photo est requise.</div>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="createColleagueForm.invalid">Ajouter</button>
+</form>

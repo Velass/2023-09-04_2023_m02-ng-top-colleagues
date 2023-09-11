@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateColleagueModule } from './pages/create-colleague/create-colleague.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive/create-colleague-reactive.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     CreateColleagueModule,
     CommonModule,
     FormsModule,
+    CreateColleagueReactiveModule
   
   ],
 
