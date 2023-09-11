@@ -1,8 +1,8 @@
-<form #createColleagueForm="ngForm" (ngSubmit)="ajouter()">
+<form #createColleagueForm="ngForm" tcFirstLastValidator (ngSubmit)="ajouter()">
     <div class="form-group">
       <label for="pseudo">Pseudo: </label>
       <input type="text" id="pseudo" name="pseudo" [(ngModel)]="colleague.pseudo" required minlength="2" #pseudoInput="ngModel">
-      <div *ngIf="pseudoInput.invalid && pseudoInput.touched">
+      <div *ngIf="pseudoInput.invalid && pseudoInput.touched && createColleagueForm.hasError('firstLastMismatch') ">
         <div class="alert alert-danger">Le pseudo est requis et doit avoir au moins 2 caractères.</div>
       </div>
     </div>
@@ -12,6 +12,9 @@
       <input type="text" id="nom" name="nom" [(ngModel)]="colleague.last" required minlength="2" #nomInput="ngModel">
       <div *ngIf="nomInput.invalid && nomInput.touched">
         <div class="alert alert-danger">Le nom est requis et doit avoir au moins 2 caractères.</div>
+      </div>
+      <div *ngIf="createColleagueForm.hasError('firstLast')">
+        <div class="alert alert-danger">Le nom ne peut pas être identique au prénom.</div>
       </div>
     </div>
   
