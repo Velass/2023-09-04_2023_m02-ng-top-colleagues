@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ColleagueService } from 'src/app/providers/colleague.service';
 
 @Component({
   selector: 'tc-create-colleague-forms',
@@ -6,15 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-colleague-forms.component.scss']
 })
 export class CreateColleagueFormsComponent {
-  colleague = {
+  colleague : any = {
     pseudo: '',
-    nom: '',
-    prenom: '',
-    photoUrl: ''
+    last: '',
+    first: '',
+    photo: ''
   };
 
-  onSubmit() {
-    console.log('Formulaire soumis avec succès:', this.colleague);
-  }
+constructor(private colleagueService: ColleagueService) { }
+
+ngOnInit(): void {
+
 }
 
+ajouter() {
+  console.log('Formulaire soumis avec succès:', this.colleague);
+    this.colleagueService.createColleague(this.colleague).subscribe(res => {
+      console.log(res)
+    });
+
+}
+
+}
