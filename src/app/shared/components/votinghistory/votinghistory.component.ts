@@ -9,19 +9,18 @@ import { VoteService } from 'src/app/providers/vote.service';
   styleUrls: ['./votinghistory.component.scss']
 })
 export class VotingHistoryComponent implements OnInit {
-  votes: Vote[] = []; 
+  votes: Vote[] = [];
   constructor(private voteService: VoteService) { }
 
   ngOnInit(): void {
     this.voteService.getVotes().subscribe((votes) => {
       this.votes = votes;
+      this.voteService.actionObs.subscribe((vote: Vote) => {
+        this.votes.unshift(vote)
+      })
     });
 
-    this.voteService.actionObs.subscribe((vote: Vote) => {
-      this.votes.unshift(vote)
-    })
   }
-
 
   deleteVote(vote: Vote): void {
     const index = this.votes.findIndex((v) => v.colleague.pseudo === vote.colleague.pseudo);
