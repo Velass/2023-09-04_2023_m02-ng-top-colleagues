@@ -9,6 +9,7 @@ import { CounterComponent } from '../shared/components/counter/counter.component
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
 import { FormsModule } from '@angular/forms';
 import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
+import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 
 
 
@@ -23,6 +24,7 @@ import { FirstLastValidatorDirective } from './validators/first-last-validator.d
     CounterComponent,
     CreateColleagueFormsComponent,
     FirstLastValidatorDirective,
+    PseudoValidatorDirective,
 
     
   ],

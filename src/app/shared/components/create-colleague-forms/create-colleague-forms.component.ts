@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ColleagueService } from 'src/app/providers/colleague.service';
 import { FirstLastValidatorDirective } from '../../validators/first-last-validator.directive';
+import { PseudoValidatorDirective } from '../../validators/pseudo-validator.directive';
 
 @Component({
   selector: 'tc-create-colleague-forms',

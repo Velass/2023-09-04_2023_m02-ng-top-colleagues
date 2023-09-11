@@ -13,8 +13,6 @@ export class FirstLastValidatorDirective {
   validate(control: AbstractControl): ValidationErrors | null {
     const nom = control.get('nom')?.value;
     const prenom = control.get('prenom')?.value;
-    console.log(nom)
-    console.log(prenom)
     if (nom === prenom) {
       return { firstLast: 'Le nom ne peut pas être identique au prénom.' };
     }

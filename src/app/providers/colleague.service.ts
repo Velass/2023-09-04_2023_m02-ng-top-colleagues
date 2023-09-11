@@ -28,7 +28,6 @@ export class ColleagueService {
 
   }
   createColleague(colleague: any) {
-    console.log(colleague)
     return this.http.post(`${this.apiUrl}`, colleague, this.httpOptions);
   }
 
