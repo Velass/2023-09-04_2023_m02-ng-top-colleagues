@@ -1,6 +1,6 @@
 <form #createColleagueForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="pseudo">Pseudo</label>
+      <label for="pseudo">Pseudo: </label>
       <input type="text" id="pseudo" name="pseudo" [(ngModel)]="colleague.pseudo" required minlength="2">
       <div *ngIf="createColleagueForm.controls['pseudo'].invalid && createColleagueForm.controls['pseudo'].touched">
         <div class="alert alert-danger">Le pseudo est requis et doit avoir au moins 2 caractères.</div>
@@ -8,7 +8,7 @@
     </div>
   
     <div class="form-group">
-      <label for="nom">Nom</label>
+      <label for="nom">Nom: </label>
       <input type="text" id="nom" name="nom" [(ngModel)]="colleague.nom" required minlength="2">
       <div *ngIf="createColleagueForm.controls['nom'].invalid && createColleagueForm.controls['nom'].touched">
         <div class="alert alert-danger">Le nom est requis et doit avoir au moins 2 caractères.</div>
@@ -16,7 +16,7 @@
     </div>
   
     <div class="form-group">
-      <label for="prenom">Prénom</label>
+      <label for="prenom">Prénom: </label>
       <input type="text" id="prenom" name="prenom" [(ngModel)]="colleague.prenom" required minlength="2">
       <div *ngIf="createColleagueForm.controls['prenom'].invalid && createColleagueForm.controls['prenom'].touched">
         <div class="alert alert-danger">Le prénom est requis et doit avoir au moins 2 caractères.</div>
@@ -24,7 +24,7 @@
     </div>
   
     <div class="form-group">
-      <label for="photoUrl">Photo URL</label>
+      <label for="photoUrl">Photo URL: </label>
       <input type="text" id="photoUrl" name="photoUrl" [(ngModel)]="colleague.photoUrl" required>
       <div *ngIf="createColleagueForm.controls['photoUrl'].invalid && createColleagueForm.controls['photoUrl'].touched">
         <div class="alert alert-danger">L'URL de la photo est requise.</div>

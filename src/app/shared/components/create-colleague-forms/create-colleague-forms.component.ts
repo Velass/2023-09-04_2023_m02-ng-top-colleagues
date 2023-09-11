@@ -12,9 +12,8 @@ export class CreateColleagueFormsComponent {
     prenom: '',
     photoUrl: ''
   };
-  
+
   onSubmit() {
-    // Ici, vous pouvez gérer la soumission du formulaire, par exemple, en ajoutant le collègue à une liste.
     console.log('Formulaire soumis avec succès:', this.colleague);
   }
 }

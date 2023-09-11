@@ -1,0 +1,14 @@
+form  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid 2px red;
+    width: 350px;
+    margin-left: 40%;
+
+    .form-group {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+}
