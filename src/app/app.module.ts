@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive/create-colleague-reactive.module';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { LoginModule } from './pages/login/login.module';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     CreateColleagueReactiveModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    LoginModule
   
   ],
 
