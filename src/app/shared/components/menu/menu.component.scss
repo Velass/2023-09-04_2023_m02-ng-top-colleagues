@@ -1,4 +1,15 @@
 .menu {
     display: flex;
-    gap: 30px;
+    justify-content: space-around;
+    li{
+        border: 2px black solid;
+        list-style-type: none;
+
+        a{
+
+            text-decoration: none;
+            list-style: none;
+            color: black;
+        }
+    }
 }

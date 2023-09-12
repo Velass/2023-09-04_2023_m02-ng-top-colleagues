@@ -1,4 +1,5 @@
 <form #createColleagueForm="ngForm" tcFirstLastValidator (ngSubmit)="ajouter()">
+    <h2>Formulaire par template</h2>
     <div class="form-group">
         <label for="pseudo">Pseudo: </label>
         <input type="text" id="pseudo" name="pseudo" [(ngModel)]="colleague.pseudo" minlength="2" #pseudoInput="ngModel"

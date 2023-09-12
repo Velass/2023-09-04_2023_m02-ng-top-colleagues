@@ -12,6 +12,7 @@ import { FirstLastValidatorDirective } from './validators/first-last-validator.d
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -35,7 +36,8 @@ import { MenuComponent } from './components/menu/menu.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     LikeHateComponent,

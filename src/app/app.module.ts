@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
+
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
@@ -10,6 +12,8 @@ import { CreateColleagueModule } from './pages/create-colleague/create-colleague
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive/create-colleague-reactive.module';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -27,7 +31,9 @@ import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive
     CreateColleagueModule,
     CommonModule,
     FormsModule,
-    CreateColleagueReactiveModule
+    CreateColleagueReactiveModule,
+    AppRoutingModule,
+    RouterModule
   
   ],
 
