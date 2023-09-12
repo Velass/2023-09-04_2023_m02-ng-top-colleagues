@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 
@@ -27,6 +28,7 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
     FirstLastValidatorDirective,
     PseudoValidatorDirective,
     CreateColleagueReactiveFormsComponent,
+    MenuComponent,
 
     
   ],
@@ -43,7 +45,8 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
     VotingHistoryComponent,
     CounterComponent,
     CreateColleagueFormsComponent,
-    CreateColleagueReactiveFormsComponent
+    CreateColleagueReactiveFormsComponent,
+    MenuComponent,
   ],
   
 })

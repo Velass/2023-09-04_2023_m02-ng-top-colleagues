@@ -22,7 +22,7 @@
     <div *ngIf="createColleagueForm.get('last').hasError('minlength') && createColleagueForm.get('last').touched">
       <div class="alert alert-danger">Le nom doit avoir au moins 2 caractères.</div>
     </div>
-    <div *ngIf="createColleagueForm.hasError('firstLast')&& createColleagueForm.get('last').touched">
+    <div *ngIf="createColleagueForm.hasError('firstLast') && createColleagueForm.get('last').touched">
       <div class="alert alert-danger">Le nom ne peut pas être identique au prénom.</div>
     </div>
   </div>
