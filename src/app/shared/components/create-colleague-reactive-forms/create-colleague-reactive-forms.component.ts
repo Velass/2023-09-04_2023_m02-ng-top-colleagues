@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ColleagueService } from 'src/app/providers/colleague.service';
 import { FirstLastValidatorDirective } from '../../validators/first-last-validator.directive';
 import { PseudoValidatorDirective } from '../../validators/pseudo-validator.directive';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tc-create-colleague-reactive-forms',
@@ -12,7 +13,7 @@ import { PseudoValidatorDirective } from '../../validators/pseudo-validator.dire
 export class CreateColleagueReactiveFormsComponent implements OnInit {
   createColleagueForm: FormGroup | any;
 
-  constructor(private formBuilder: FormBuilder, private colleagueService: ColleagueService) { }
+  constructor(private formBuilder: FormBuilder, private colleagueService: ColleagueService, private route: Router) { }
 
   ngOnInit(): void {
     this.createColleagueForm = this.formBuilder.group({
@@ -28,6 +29,7 @@ export class CreateColleagueReactiveFormsComponent implements OnInit {
       const formData = this.createColleagueForm.value;
       this.colleagueService.createColleague(formData).subscribe(res => {
         console.log(res)
+        this.route.navigate(["/colleagues-list"]);
       });
       } else {
         console.log('Le formulaire contient des erreurs.');

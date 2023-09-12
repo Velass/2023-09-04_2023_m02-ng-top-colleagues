@@ -12,7 +12,7 @@ import { FirstLastValidatorDirective } from './validators/first-last-validator.d
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { RouterModule } from '@angular/router';
+import {Route, RouterModule } from '@angular/router';
 import { DetailsColleagueComponent } from './components/details-colleague/details-colleague.component';
 
 
@@ -39,7 +39,8 @@ import { DetailsColleagueComponent } from './components/details-colleague/detail
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    
   ],
   exports: [
     LikeHateComponent,
