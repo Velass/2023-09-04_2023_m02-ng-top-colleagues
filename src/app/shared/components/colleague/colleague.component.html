@@ -1,8 +1,10 @@
 
   <div class="colleague-card" *ngIf="colleague" >
+    <a [routerLink]="['/colleagues', colleague.pseudo]">
     <img [src]="colleague.photo" alt="photo">
     <h3>{{ colleague.pseudo | uppercase }}</h3>
     <p>Score: {{ colleague.score | score  }}</p>
+  </a>
     <tc-like-hate (avisEmitted)="handleAvis($event)" [disableLikeButton] = "disableLikeButton" [disableHateButton] = "disableHateButton"></tc-like-hate>
   </div>
 

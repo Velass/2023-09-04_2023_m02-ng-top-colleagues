@@ -36,5 +36,10 @@ export class ColleagueService {
     return this.http.get<Colleague[]>(this.apiUrl);
   }
 
+  getColleaguesByPseudo(pseudo : string |any): Observable<Colleague[]> {
+    return this.http.get<Colleague[]>(this.apiUrl +"/" + pseudo);
+
+  }
+
 
 }

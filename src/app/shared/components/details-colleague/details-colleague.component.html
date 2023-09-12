@@ -1,1 +1,10 @@
-<p>details-colleague works!</p>
+<div class="colleague-card" *ngIf="colleague">
+    <img [src]="colleague.photo" alt="photo">
+    <h3>{{ colleague.pseudo | uppercase }}</h3>
+    <p>Score: {{ colleague.score | score }}</p>
+    <div class="infoSup">
+        <p>{{ colleague.last }}</p>
+        <p>{{ colleague.first }}</p>
+
+    </div>
+</div>
