@@ -27,7 +27,6 @@ export class CounterComponent implements OnDestroy {
    }
   ngOnDestroy(): void {
     this.sub.unsubscribe()
-    throw new Error('Method not implemented.');
   }
 
 

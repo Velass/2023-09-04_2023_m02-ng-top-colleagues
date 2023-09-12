@@ -13,6 +13,7 @@ import { PseudoValidatorDirective } from './validators/pseudo-validator.directiv
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { DetailsColleagueComponent } from './components/details-colleague/details-colleague.component';
 
 
 
@@ -30,6 +31,7 @@ import { RouterModule } from '@angular/router';
     PseudoValidatorDirective,
     CreateColleagueReactiveFormsComponent,
     MenuComponent,
+    DetailsColleagueComponent,
 
     
   ],
