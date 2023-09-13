@@ -1,4 +1,33 @@
 .colleague {
     display: flex;
     flex-wrap: wrap;
-}
+  }
+  
+  .userLastFirst {
+    padding: 10px;
+  
+    p {
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+  
+  .welcomeBlock {
+    margin-top: 20px;
+    margin-left: 10px;
+  
+    button {
+      background-color: #00bfff;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  

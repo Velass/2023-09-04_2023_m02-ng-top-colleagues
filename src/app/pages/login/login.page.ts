@@ -26,11 +26,8 @@ export class LoginPage {
 
   }
   login() {
-    console.log(this.loginForm.value)
     this.auth.userLoggin(this.loginForm.value).subscribe((res) => {
-      console.log(res)
       this.jwt = res.jwt;
-      console.log(this.jwt)
       if (res.jwt) {
         localStorage.setItem('jwt', this.jwt)
         localStorage.setItem('pseudo',this.loginForm.value.pseudo)

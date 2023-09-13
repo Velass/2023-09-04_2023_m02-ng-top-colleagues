@@ -1,27 +1,25 @@
-.colleague {
-    display: flex;
-}
-
 .colleague-card {
-    border: solid black 2px;
-    width: 300px;
-    margin-left: 100px;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+    background-color: #f4f4f4; 
+    padding: 10px;
+    border: 1px solid #ccc; 
+    margin: 10px;
+    text-align: center;
     a {
         text-decoration: none;
-        color: black;
-        img {
-            max-width: 150px;
-        }
-
-        h3 {
-            font-size: medium;
-        }
-
+        color: #333; 
+    }
+    img {
+        max-width: 150px;
+        height: auto;
+    }
+    h3 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    p {
+        margin: 10px 0;
+        font-size: 16px;
     }
 }
+
+

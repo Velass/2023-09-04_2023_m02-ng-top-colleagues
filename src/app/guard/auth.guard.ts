@@ -18,11 +18,8 @@ export class AuthGuard {
     const isAuthenticated = localStorage.getItem('jwt');
 
     if (isAuthenticated != null) {
-      console.log("authen ok")
-      console.log(isAuthenticated)
       return true;
     } else {
-      console.log("auth non")
       this.router.navigate(['/login']);
       return false;
     }

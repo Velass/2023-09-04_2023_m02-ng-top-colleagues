@@ -24,10 +24,7 @@ export class ColleagueListComponent {
     this.colleagueService.getColleagues().subscribe(data => {
       this.colleagues = data; 
       this.colleagueService.getColleaguesByPseudo(this.pseudoInLocalStorage).subscribe(res =>{
-        console.log(res)
-        console.log(this.pseudoInLocalStorage)
         this.onecolleagues = res
-        console.log(this.colleagues)
       })
     });
   }

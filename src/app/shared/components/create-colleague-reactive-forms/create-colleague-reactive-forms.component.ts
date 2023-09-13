@@ -28,7 +28,6 @@ export class CreateColleagueReactiveFormsComponent implements OnInit {
     if (this.createColleagueForm.valid) {
       const formData = this.createColleagueForm.value;
       this.colleagueService.createColleague(formData).subscribe(res => {
-        console.log(res)
         this.route.navigate(["/colleagues-list"]);
       });
       } else {

@@ -1,17 +1,63 @@
-.blockHisto {
-    display: flex;
-    flex-direction: column;
-    .oneHisto{
-        border: solid 2px blue;
-        margin-left: 15px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        display: flex;
-        img {
-            border: solid 2px black;
-            width: 100px;
-            height: 100px;
+.votingHistory {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
 
+    .histoH {
+        text-align: center;
+
+        h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+    }
+
+    .blockHisto {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .votes {
+        margin: auto;
+        width: 100%;
+    }
+
+    .oneHisto {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+
+        img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .note {
+            p {
+                margin: 0;
+                font-size: 16px;
+            }
+
+            .supp {
+                background-color: #ff5733;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 5px 10px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                &:hover {
+                    background-color: #d33a20;
+                }
+            }
         }
     }
 }

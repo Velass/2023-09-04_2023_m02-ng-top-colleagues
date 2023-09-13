@@ -22,8 +22,6 @@ export class DetailsColleagueComponent {
     const colleaguePseudo =  this.route.snapshot.paramMap.get('pseudo');
     this.colleagueService.getColleaguesByPseudo(colleaguePseudo).subscribe((res) => {
       this.colleague = res;
-      console.log(res)
-      console.log(colleaguePseudo)
     });
   }
 

@@ -41,13 +41,11 @@ export class AuthService {
   isLogged(loginForm: any): Observable<boolean> {
     return this.http.post<any>(this.apiUrl, loginForm, this.httpOptions).pipe(
       map(response => {
-         console.log(response)
         // Si l'authentification réussit, émettez true
         this.userLoggedInSubject.next(true);
         return true;
       }),
       catchError(error => {
-        console.log(error)
         // Si l'authentification échoue, émettez false et gérez l'erreur
         this.userLoggedInSubject.next(false);
         return of(false);

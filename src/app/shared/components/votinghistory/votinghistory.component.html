@@ -4,7 +4,7 @@
     </div>
 
     <div class="blockHisto">
-        <div *ngFor="let vote of votes; let index = index;" >
+        <div class="votes" *ngFor="let vote of votes; let index = index;" >
             <div class="oneHisto">
                 <img [src]="vote.colleague.photo" alt="photo">
                 <div class="note">

@@ -1,24 +1,17 @@
-.welcomeBlock {
-    button {
-        margin-top: 20px;
-    }
-
-}
-
 .block {
     display: flex;
     margin-top: -30px;
 
-}
+    .colleagueAndVoting {
+        display: flex;
+        margin-top: 60px;
 
-.colleagueAndVoting{
-    display: flex;
-    margin-top: 100px;
-tc-colleague-list {
-    width: 70%;
-}
+        tc-colleague-list {
+            width: 70%;
+        }
 
-tc-votinghistory {
-    width: auto;
-}
+        tc-votinghistory {
+            width: 30%;
+        }
+    }
 }

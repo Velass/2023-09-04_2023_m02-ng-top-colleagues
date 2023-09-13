@@ -14,7 +14,6 @@ export class PseudoValidatorDirective implements AsyncValidator {
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
     return of(control.value).pipe(
       switchMap((pseudo: string) => {
-        console.log(pseudo);
         if (!pseudo) {
           return of(null);
         }

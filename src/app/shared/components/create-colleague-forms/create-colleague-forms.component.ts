@@ -25,7 +25,6 @@ ngOnInit(): void {
 
 ajouter() {
     this.colleagueService.createColleague(this.colleague).subscribe(res => {
-      console.log(res)
       this.route.navigate(["/colleagues-list"]);
     });
 }

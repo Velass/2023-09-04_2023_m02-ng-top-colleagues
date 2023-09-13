@@ -1,13 +1,43 @@
 .colleague-card {
-    width: 300px;
-    border: solid 1px red;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 30%;
     margin-left: 40%;
-    margin-top: 125px;
-    text-align: center;
+    margin-top: 100px;
 
-    .infoSup{
-        font-size: x-large;
+    img {
+        max-width: 180px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .infoSup {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 10px;
+
+        p {
+            flex: 1;
+            font-size: 14px;
+            margin: 0;
+        }
     }
 }
