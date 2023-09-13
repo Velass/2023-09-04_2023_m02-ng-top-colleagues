@@ -5,16 +5,17 @@ import { CreateColleagueFormsComponent } from './shared/components/create-collea
 import { WelcomePage } from './pages/welcome/welcome.page';
 import { DetailsColleagueComponent } from './shared/components/details-colleague/details-colleague.component';
 import { LoginPage } from './pages/login/login.page';
+import { AuthGuard } from './guard/auth.guard';
 
 
 export const routes: Routes = [
-  { path: 'colleagues-list', component: WelcomePage },
-  { path: 'form-template', component: CreateColleagueFormsComponent },
-  { path: 'form-reactive', component: CreateColleagueReactiveFormsComponent },
-  { path: 'colleagues/:pseudo', component: DetailsColleagueComponent },
+  { path: 'colleagues-list', component: WelcomePage , canActivate: [AuthGuard]},
+  { path: 'form-template', component: CreateColleagueFormsComponent, canActivate: [AuthGuard] },
+  { path: 'form-reactive', component: CreateColleagueReactiveFormsComponent, canActivate: [AuthGuard] },
+  { path: 'colleagues/:pseudo', component: DetailsColleagueComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginPage },
-  { path: '', pathMatch: 'full', redirectTo: '/colleagues-list'},
-  { path: '**', component: WelcomePage },
+  { path: '', pathMatch: 'full', redirectTo: '/login'},
+  { path: '**', component: LoginPage },
 
 ];
 
