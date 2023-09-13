@@ -12,8 +12,8 @@ export class AuthGuard {
   constructor(private router: Router) {}
 
   canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+  //  route: ActivatedRouteSnapshot,
+  //  state: RouterStateSnapshot
   ): boolean {
     const isAuthenticated = localStorage.getItem('jwt');
 
