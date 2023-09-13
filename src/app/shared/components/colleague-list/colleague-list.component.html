@@ -1,3 +1,9 @@
-<div class="colleague" >
-<tc-colleague *ngFor="let colleague of colleagues" [colleague]="colleague"></tc-colleague>
+<div class="userLastFirst">
+    <p>Bonjour {{onecolleagues.last}} {{onecolleagues.first}}</p>
+</div>
+<div class="welcomeBlock">
+    <button>Raffraichir la liste</button>
+</div>
+<div class="colleague">
+    <tc-colleague *ngFor="let colleague of colleagues" [colleague]="colleague"></tc-colleague>
 </div>

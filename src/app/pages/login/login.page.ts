@@ -14,7 +14,7 @@ export class LoginPage {
   jwt: string | any;
   errorLogin: object | any;
 
-  constructor(private formBuilder: FormBuilder,private auth : AuthService, private route: Router ) {}
+  constructor(private formBuilder: FormBuilder, private auth: AuthService, private route: Router) { }
 
 
 
@@ -25,14 +25,15 @@ export class LoginPage {
     });
 
   }
-  login(){
+  login() {
     console.log(this.loginForm.value)
-    this.auth.identification(this.loginForm.value).subscribe((res) => {
+    this.auth.userLoggin(this.loginForm.value).subscribe((res) => {
       console.log(res)
       this.jwt = res.jwt;
       console.log(this.jwt)
       if (res.jwt) {
         localStorage.setItem('jwt', this.jwt)
+        localStorage.setItem('pseudo',this.loginForm.value.pseudo)
         this.route.navigate(["/colleagues-list"]);
       } else {
         console.log("pas de jwt")
@@ -43,9 +44,7 @@ export class LoginPage {
         console.error(errorLogin)
         this.errorLogin = "Identifiant ou mot de passe incorrecte. ";
       });
-   
 
-    
   }
 
 }

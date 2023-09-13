@@ -1,8 +1,11 @@
 <nav>
-    <ul class="menu">
-      <li><a routerLink="/colleagues-list">accueil</a></li>
-      <li><a routerLink="/form-template">Formulaire piloté par le template</a></li>
-      <li><a routerLink="/form-reactive">Formulaire réactif</a></li>
-    </ul>
-  </nav>
-  
+  <ul class="menu" *ngIf="showMenu">
+    <li><a routerLink="/colleagues-list">accueil</a></li>
+    <li><a routerLink="/form-template">Formulaire piloté par le template</a></li>
+    <li><a routerLink="/form-reactive">Formulaire réactif</a></li>
+    <li><button (click)="logout()">Déconnexion</button></li>
+  </ul>
+</nav>
+<!-- <div *ngIf="isAuthenticated">
+   <p>Bienvenue, {{ last }}</p> 
+</div> -->

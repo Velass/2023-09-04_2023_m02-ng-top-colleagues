@@ -19,11 +19,11 @@ export class DetailsColleagueComponent {
   constructor(private colleagueService : ColleagueService, private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    const colleagueId =  this.route.snapshot.paramMap.get('pseudo');
-    this.colleagueService.getColleaguesByPseudo(colleagueId).subscribe((res) => {
+    const colleaguePseudo =  this.route.snapshot.paramMap.get('pseudo');
+    this.colleagueService.getColleaguesByPseudo(colleaguePseudo).subscribe((res) => {
       this.colleague = res;
       console.log(res)
-      console.log(colleagueId)
+      console.log(colleaguePseudo)
     });
   }
 

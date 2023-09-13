@@ -1,0 +1,11 @@
+form {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px red;
+    width: 300px;
+    margin-left: 40%;
+    margin-top: 100px;
+    button {
+        align-self: center;
+    }
+}

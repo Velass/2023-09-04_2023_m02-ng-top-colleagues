@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthGuard } from 'src/app/guard/auth.guard';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
   selector: 'tc-menu',
@@ -7,10 +8,18 @@ import { AuthGuard } from 'src/app/guard/auth.guard';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
-  constructor(public authGuard: AuthGuard) { }
-
+  constructor(private route: Router, private authService : AuthService ) { }
+  showMenu = false
+  ngOnInit(): void {
+    this.authService.userLoggedIn$.subscribe({ next: show =>this.showMenu = show})
+    const isAuthenticated = localStorage.getItem('jwt');
+    if (isAuthenticated != null) {
+      this.showMenu = true
+    }
+  }
   logout() {
-    // Placez ici la logique de déconnexion, par exemple, effacer le jeton JWT
-    // et rediriger l'utilisateur vers la page de connexion.
+    this.showMenu = false
+    localStorage.clear();
+    this.route.navigate(["/login"]);
   }
 }
