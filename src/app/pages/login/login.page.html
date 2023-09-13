@@ -3,18 +3,25 @@
     <div class="form-group">
         <label for="pseudo">Pseudo: </label>
         <input type="text" id="pseudo" formControlName="pseudo">
-        <!-- <div
-            *ngIf="createColleagueForm.get('pseudo').hasError('pseudoExists') && createColleagueForm.get('pseudo').touched">
-            <div class="alert alert-danger">{{ createColleagueForm.get('pseudo').getError('pseudoExists') }}</div>
-        </div> -->
+        <div *ngIf="loginForm.get('pseudo').hasError('required') && loginForm.get('pseudo').touched">
+            <div class="alert alert-danger">Le Pseudo est requis.</div>
+        </div>
+        <div *ngIf="loginForm.get('pseudo').hasError('minlength') && loginForm.get('pseudo').touched">
+            <div class="alert alert-danger">Le Pseudo doit avoir au moins 2 caractères.</div>
+        </div>
     </div>
     <div class="form-group">
-        <label for="password">password: </label>
+        <label for="password">Password: </label>
         <input type="text" id="password" formControlName="password">
-        <!-- <div
-            *ngIf="createColleagueForm.get('pseudo').hasError('pseudoExists') && createColleagueForm.get('pseudo').touched">
-            <div class="alert alert-danger">{{ createColleagueForm.get('pseudo').getError('pseudoExists') }}</div>
-        </div> -->
+        <div *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
+            <div class="alert alert-danger">Le Password est requis.</div>
+        </div>
+        <div *ngIf="loginForm.get('password').hasError('minlength') && loginForm.get('password').touched">
+            <div class="alert alert-danger">Le Password doit avoir au moins 2 caractères.</div>
+        </div>
     </div>
+    <div *ngIf="errorLogin" class="alert alert-danger">
+        {{ errorLogin }}
+      </div>
     <button type="submit" [disabled]="loginForm.invalid">Login</button>
 </form>

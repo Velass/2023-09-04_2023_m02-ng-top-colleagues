@@ -10,7 +10,7 @@ export class VoteService {
 
   private votes: Vote[] = [];
   private votesSubject = new Subject< Vote >();
-   apiUrl : string = "https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/votes";
+   apiUrl : string = "https://app-005f27d8-9033-48cc-ba69-b798464dee52.cleverapps.io/api/v2/votes";
   
   constructor(private http: HttpClient) {
     this.getVotes().subscribe((votes) => {

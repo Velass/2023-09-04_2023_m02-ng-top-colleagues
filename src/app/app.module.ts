@@ -15,6 +15,7 @@ import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { LoginModule } from './pages/login/login.module';
+import { LoginRoutingModule } from './pages/login/login-routing.module';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { LoginModule } from './pages/login/login.module';
     CreateColleagueReactiveModule,
     AppRoutingModule,
     RouterModule,
-    LoginModule
+    LoginModule,
+    LoginRoutingModule
   
   ],
 
