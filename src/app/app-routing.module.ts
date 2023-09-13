@@ -11,7 +11,8 @@ export const routes: Routes = [
   { path: 'form-template', component: CreateColleagueFormsComponent },
   { path: 'form-reactive', component: CreateColleagueReactiveFormsComponent },
   { path: 'colleagues/:pseudo', component: DetailsColleagueComponent },
-//  { path: '', component: WelcomePage },
+  { path: '', pathMatch: 'full', redirectTo: '/colleagues-list'},
+  { path: '**', component: WelcomePage },
 
 ];
 
