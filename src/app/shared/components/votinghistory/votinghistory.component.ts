@@ -14,7 +14,6 @@ export class VotingHistoryComponent implements OnInit {
   ngOnInit(): void {
     this.voteService.getVotes().subscribe((votes) => {
       this.votes.push(...votes);
-      console.log(this.votes)
       this.voteService.actionObs.subscribe((vote: Vote) => {
         this.votes.unshift(vote)
       })
