@@ -5,5 +5,4 @@ export interface Vote {
     colleague: Colleague; 
     like_hate: Like_Hate; 
     score: number;
-
 }
