@@ -4,11 +4,13 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { BanniereComponent } from './banniere/banniere.component';
+import { CompteurComponent } from './compteur/compteur.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BanniereComponent
+    BanniereComponent,
+    CompteurComponent
   ],
   imports: [
     BrowserModule,
