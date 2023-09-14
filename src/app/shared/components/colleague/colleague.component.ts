@@ -25,7 +25,7 @@ export class ColleagueComponent {
   
   handleAvis(avis: Like_Hate) {
     if (this.colleague) {
-      let vote = {colleague : this.colleague, like_hate: avis};
+      let vote = {colleague : this.colleague, like_hate: avis, score: 0};
       let action ="";
 
       if (avis === Like_Hate.LIKE){
@@ -38,10 +38,11 @@ export class ColleagueComponent {
       this.avisEmitted.emit({ colleague: this.colleague, action: action, vote: vote });
       
       
-      this.voteService.actionNext(vote)
       
       this.colleagueService.vote(this.colleague.pseudo, action).subscribe(res => {
         this.colleague.score = res.score
+        vote.score =  res.score
+        this.voteService.actionNext(vote)
       });
 
       if (this.colleague.score >= 1000) {

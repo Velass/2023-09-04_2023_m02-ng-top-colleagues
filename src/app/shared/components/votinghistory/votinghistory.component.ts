@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Vote } from 'src/app/models/vote';
-import { ColleagueService } from 'src/app/providers/colleague.service';
 import { VoteService } from 'src/app/providers/vote.service';
 
 @Component({
@@ -10,11 +9,13 @@ import { VoteService } from 'src/app/providers/vote.service';
 })
 export class VotingHistoryComponent implements OnInit {
   votes: Vote[] = [];
+  voteScore : any
   constructor(private voteService: VoteService) { }
 
   ngOnInit(): void {
     this.voteService.getVotes().subscribe((votes) => {
-      this.votes = votes;
+      this.votes.push(...votes);
+      //this.voteScore = votes
       this.voteService.actionObs.subscribe((vote: Vote) => {
         this.votes.unshift(vote)
       })
