@@ -9,7 +9,7 @@ import { ColleagueService } from 'src/app/providers/colleague.service';
 })
 export class ColleagueListComponent {
   colleagues: Colleague[] = [];
-  onecolleagues : any = {
+  onecolleagues: any = {
     pseudo: '',
     last: '',
     first: '',
@@ -22,11 +22,17 @@ export class ColleagueListComponent {
 
   ngOnInit(): void {
     this.colleagueService.getColleagues().subscribe(data => {
-      this.colleagues = data; 
-      this.colleagueService.getColleaguesByPseudo(this.pseudoInLocalStorage).subscribe(res =>{
+      this.colleagues = data;
+      this.colleagueService.getColleaguesByPseudo(this.pseudoInLocalStorage).subscribe(res => {
         this.onecolleagues = res
       })
     });
+  }
+
+  update() {
+    this.colleagueService.getColleagues().subscribe(data => {
+      this.colleagues = data;
+    })
   }
 
 }
