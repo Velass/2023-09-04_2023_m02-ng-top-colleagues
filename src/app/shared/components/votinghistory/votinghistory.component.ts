@@ -9,13 +9,12 @@ import { VoteService } from 'src/app/providers/vote.service';
 })
 export class VotingHistoryComponent implements OnInit {
   votes: Vote[] = [];
-  voteScore : any
   constructor(private voteService: VoteService) { }
 
   ngOnInit(): void {
     this.voteService.getVotes().subscribe((votes) => {
       this.votes.push(...votes);
-      //this.voteScore = votes
+      console.log(this.votes)
       this.voteService.actionObs.subscribe((vote: Vote) => {
         this.votes.unshift(vote)
       })
@@ -23,8 +22,7 @@ export class VotingHistoryComponent implements OnInit {
 
   }
 
-  deleteVote(vote: Vote): void {
-    const index = this.votes.findIndex((v) => v.colleague.pseudo === vote.colleague.pseudo);
+  deleteVote(index: number): void {
     if (index !== -1) {
       this.votes.splice(index, 1);
 
